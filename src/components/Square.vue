@@ -27,6 +27,7 @@ const emit = defineEmits<{
     @click="cardClick(square.row, square.col)"
     class="square"
     :class="{ close: !square.isOpen, bomb: square.isBomb && square.isOpen }"
+    onmousedown="return false"
   >
     {{
       square.isOpen && square.isBomb
@@ -42,6 +43,8 @@ const emit = defineEmits<{
 
 <style>
 .square {
+  font-weight: 600;
+  font-size: 20px;
   border: 1px solid #272727;
   width: 40px;
   height: 40px;
